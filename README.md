@@ -7,7 +7,7 @@ Run GitHub commands from the Robo task runner.
 First, you'll need to download the Robo GibHub library using composer:
 
 ```bash
-composer require droath/robo-github:~0.0.1
+composer require droath/robo-github
 ```
 
 Next, you'll need to create a personal access token on GitHub so you have access to your private repositories via a Robo task. Follow this [GitHub guide](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to obtain your access token.
@@ -78,6 +78,26 @@ The GitHub account and repository arguments can also be defined using the set me
         ->addAssignee($assignee)
         ->run();
 ```
+
+**Create repository statuses:**
+
+```php
+<?php
+
+	$sha = 'c70cc19bc1bc817971ad693e58a15ed5703b439d';
+	state = 'success';
+	
+	$this->taskGitHubIssueAssignees('OJuJcqaYiX5uL72Ky')
+        ->setAccount('droath')
+        ->setRepository('robo-github')
+        ->setSha($sha)
+        ->setParamState($state)
+        ->setParamDescription('State description!')
+        ->setParamContext('vendor/projctname')
+        ->run();
+
+```
+
 
 ### Support
 
