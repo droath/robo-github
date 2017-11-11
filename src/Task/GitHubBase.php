@@ -11,11 +11,25 @@ use Robo\Task\BaseTask;
 abstract class GitHubBase extends BaseTask
 {
     /**
+     * GitHub account.
+     *
+     * @var string
+     */
+    protected $account;
+
+    /**
      * GitHub authentication token.
      *
      * @var string
      */
     protected $authToken;
+
+    /**
+     * GitHub repository name.
+     *
+     * @var string
+     */
+    protected $repository;
 
     public function __construct($auth_token = null, $account = null, $repository = null)
     {
