@@ -84,8 +84,11 @@ The GitHub account and repository arguments can also be defined using the set me
 ```php
 <?php
 
+	// GitHub commit sha reference.
 	$sha = 'c70cc19bc1bc817971ad693e58a15ed5703b439d';
-	state = 'success';
+	
+	// GitHub status state.
+	$state = 'success';
 	
 	$this->taskGitHubIssueAssignees('OJuJcqaYiX5uL72Ky')
         ->setAccount('droath')
